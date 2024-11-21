@@ -17,6 +17,10 @@
             text-align: center;
             padding: 1em 0;
         }
+        .intro {
+            text-align: center;
+            margin: 20px;
+        }
         .product {
             background: white;
             margin: 20px auto;
@@ -40,6 +44,7 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
+            margin-right: 5px;
         }
         .product button:hover {
             background-color: #45a049;
@@ -48,20 +53,57 @@
 </head>
 <body>
     <header>
-        <h1>Product AlwaysRafxz</h1>
+    </h1>Product AlwaysRafxz</h1>
     </header>
 
+    <div class="intro">
+        <h2>Selamat Datang!</h2>
+        <p>Di sini kamu bisa menemukan Berbagai produk yang tersedia di RafxzStore!</p>
+    </div>
+
     <div class="product">
-        <img src="https://via.placeholder.com/600x300" alt="Produk">
+        <img src="https://via.placeholder.com/600x300" alt="Produk 1">
         <h2>Script Rafxz - Assistant</h2>
-        <p id="description" style="display: none;">Ini adalah deskripsi lengkap tentang produk yang dijual.</p>
-        <button onclick="toggleDescription()">Cek Deskripsi</button>
-        <button onclick="buyProduct()">Beli Produk</button>
+        <p id="description1" style="display: none;">Asisten Bot WhatsApp.</p>
+        <button onclick="toggleDescription('description1')">Cek Deskripsi</button>
+        <button onclick="buyProduct('Produk 1')">Beli Produk</button>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/600x300" alt="Produk 2">
+        <h2>Script X-Thunder Version 1</h2>
+        <p id="description2" style="display: none;">Script Bug WhatsApp.</p>
+        <button onclick="toggleDescription('description2')">Cek Deskripsi</button>
+        <button onclick="buyProduct('Produk 2')">Beli Produk</button>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/600x300" alt="Produk 3">
+        <h2>Script Installer</h2>
+        <p id="description3" style="display: none;">Membantu Penginstalan Pterodactyl.</p>
+        <button onclick="toggleDescription('description3')">Cek Deskripsi</button>
+        <button onclick="buyProduct('Produk 3')">Beli Produk</button>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/600x300" alt="Produk 4">
+        <h2>Script Push Simple</h2>
+        <p id="description4" style="display: none;">Membantu Pushkontak agar lebih cepat.</p>
+        <button onclick="toggleDescription('description4')">Cek Deskripsi</button>
+        <button onclick="buyProduct('Produk 4')">Beli Produk</button>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/600x300" alt="Produk 5">
+        <h2>Script Rafxz Campuran</h2>
+        <p id="description5" style="display: none;">Memiliki banyak fitur keren.</p>
+        <button onclick="toggleDescription('description5')">Cek Deskripsi</button>
+        <button onclick="buyProduct('Produk 5')">Beli Produk</button>
     </div>
 
     <script>
-        function toggleDescription() {
-            const desc = document.getElementById('description');
+        function toggleDescription(id) {
+            const desc = document.getElementById(id);
             if (desc.style.display === 'none') {
                 desc.style.display = 'block';
             } else {
@@ -69,9 +111,12 @@
             }
         }
 
-        function buyProduct() {
-            alert('Produk berhasil dibeli!');
+        function buyProduct(productName) {
+            const phone = '628563851464'; // Ganti dengan nomor WhatsApp kamu
+            const message = `Halo, saya ingin membeli ${productName}. Apakah masih tersedia?`;
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
         }
     </script>
 </body>
-</html>
+    </html>
